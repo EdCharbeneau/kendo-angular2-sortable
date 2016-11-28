@@ -14,7 +14,17 @@
           <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="g.people">
 
             <template let-item="item">
-              <h5>{{ item.name }}</h5>
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="/assets/img/{{ item.id }}.png" class="avatar" />
+                  </div>
+                  <div class="col-sm-9">
+                    <h5>{{ item.name }}</h5>
+                    <p>{{ item.location }}</p>
+                  </div>
+                </div>
+              </div>
             </template>
 
           </kendo-sortable>
@@ -28,9 +38,19 @@
       <h3>Ungrouped</h3>
       <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="ungroupedContacts">
 
-        <template let-item="item">
-          <h5>{{ item.name }}</h5>
-        </template>
+            <template let-item="item">
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="/assets/img/{{ item.id }}.png" class="avatar" />
+                  </div>
+                  <div class="col-sm-9">
+                    <h5>{{ item.name }}</h5>
+                    <p>{{ item.location }}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
 
       </kendo-sortable>
 
