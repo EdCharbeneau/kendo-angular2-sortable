@@ -13,11 +13,32 @@ export class AppComponent {
 
   constructor() {
     this.groups = this.getContacts()
-                      .filter(c => c.group != "Ungrouped");
-      
+      .filter(c => c.group != "Ungrouped");
+
+    this.groups.push({
+      group: "Add new group",
+      people: []
+    })
+
     this.ungroupedContacts = this.getContacts()
-                                 .filter(c => c.group == "Ungrouped")[0].people;
+      .filter(c => c.group == "Ungrouped")[0].people;
   }
+
+  public onAdd(args, item) {
+    console.log("Added")
+
+    if (item.group == "Add new group") {
+
+      item.group = item.people + args.dataItem.name + "'s Group"
+
+      this.groups.push({
+        group: "Add new group",
+        people: []
+      })
+    }
+  }
+
+
   private getContacts() {
     return [
       {
