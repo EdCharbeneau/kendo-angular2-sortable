@@ -11,7 +11,7 @@
       <ul class="groups">
         <li *ngFor="let g of groups">
           <h4>{{ g.group }}</h4>
-          <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="g.people">
+          <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="g.people" [activeItemClass]="'active'" [emptyItemClass]="'contact-info--empty'" [emptyText]="'Drag contacts here'">
 
             <template let-item="item">
               <div class="contact-info">
@@ -36,7 +36,7 @@
     <section class="group-panel col-md-6">
       <!-- Ungrouped items -->
       <h3>Ungrouped</h3>
-      <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="ungroupedContacts">
+      <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="ungroupedContacts" [activeItemClass]="'active'" [emptyItemClass]="'contact-info--empty'" [emptyText]="'Drag contacts here'">
 
             <template let-item="item">
               <div class="contact-info">
