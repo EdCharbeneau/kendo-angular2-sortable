@@ -1,51 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/* settings */
+@import "./scss/settings";
+
+/* vendors */
 @import "~@telerik/kendo-theme-default/styles/packages/all";
-@import "~bootstrap/scss/bootstrap";
+@import "./scss/bootstrap.custom";
 
-.group-panel {
-
-    padding-top:1em;
-
-	h2,h3,h4 {
-	    color: $gray-lightest;
-    }
-
-    ul {
-	    padding: 0;
-		list-style-type: none;
-	}
-}
-		
-.contact-info {
-    background-color: $gray-lighter;
-	margin-bottom: .5em;
-	padding: .5em .5em;
-	border-radius: .1em;
-}
-		
-.active .contact-info {
-    @extend .k-primary;
-}
-		
-.avatar {
-    border-radius:50%;
-}
-
-.container {
-    background-color:  #00acc1;
-	border-radius:.1em;
-}
-	
-.contact-info {
-    background-color: $gray-lighter;
-	margin-bottom: .5em;
-	padding: .5em .5em;
-	border-radius: .1em;
-		
-    &--empty {
-        color:rgba($gray-lightest, .8);
-		background-color:rgba($gray-lightest, .2);
-		text-align: center;
-		font-size:2em;
-		}
-}
+/* app */
+@import "./scss/layout";
+@import "./scss/contact";

@@ -1,0 +1,21 @@
+.avatar {
+    border-radius:50%;
+}
+	
+.contact-info {
+    background-color: $gray-lighter;
+	margin-bottom: .5em;
+	padding: .5em .5em;
+	border-radius: .1em;
+		
+    &--empty {
+        color:rgba($gray-lightest, .8);
+		background-color:rgba($gray-lightest, .2);
+		text-align: center;
+		font-size:2em;
+		}
+}
+
+.active .contact-info {
+    @extend .k-primary;
+}
