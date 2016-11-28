@@ -1,21 +1,41 @@
-		<div class="container">
-		  <div class="row">
-		    <!-- wrapper -->
-		    <h1 class="col-sm-12">
-		      {{title}}
-		    </h1>
-		
-		    <section class="group-panel col-md-6">
-		      <!-- Grouped items -->
-		      <h3>Groups</h3>
-		
-		    </section>
-		    <section class="group-panel col-md-6">
-		      <!-- Ungrouped items -->
-		      <h3>Ungrouped</h3>
-		
-		    </section>
-		
-		    <!-- /wrapper -->
-		  </div>
-		</div>
+<div class="container">
+  <div class="row">
+    <!-- wrapper -->
+    <h1 class="col-sm-12">
+      {{title}}
+    </h1>
+
+    <section class="group-panel col-md-6">
+      <!-- Grouped items -->
+      <h3>Groups</h3>
+      <ul class="groups">
+        <li *ngFor="let g of groups">
+          <h4>{{ g.group }}</h4>
+          <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="g.people">
+
+            <template let-item="item">
+              <h5>{{ item.name }}</h5>
+            </template>
+
+          </kendo-sortable>
+        </li>
+
+      </ul>
+
+    </section>
+    <section class="group-panel col-md-6">
+      <!-- Ungrouped items -->
+      <h3>Ungrouped</h3>
+      <kendo-sortable [zone]="'contacts'" [navigatable]="true" [data]="ungroupedContacts">
+
+        <template let-item="item">
+          <h5>{{ item.name }}</h5>
+        </template>
+
+      </kendo-sortable>
+
+    </section>
+
+    <!-- /wrapper -->
+  </div>
+</div>
