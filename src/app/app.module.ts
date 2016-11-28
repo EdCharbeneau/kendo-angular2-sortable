@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SortableModule } from '@progress/kendo-angular-sortable';
+import { ContactComponent } from './contact/contact.component';
 		
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
