@@ -7,15 +7,26 @@
 	margin-bottom: .5em;
 	padding: .5em .5em;
 	border-radius: .1em;
-		
+	h5 {
+    	margin-top: 1em;
+	}
     &--empty {
         color:rgba($gray-lightest, .8);
 		background-color:rgba($gray-lightest, .2);
 		text-align: center;
 		font-size:2em;
+		&:before {
+				font-family: FontAwesome;
+				content: "\f2be ";
+			}
 		}
+
+	.active & {
+    	@extend .k-primary;
+	}
+
+	.location {
+    	color: $gray-light;	
+	}
 }
 
-.active .contact-info {
-    @extend .k-primary;
-}
